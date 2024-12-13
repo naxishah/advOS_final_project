@@ -32,10 +32,33 @@ sudo apt install gcc fio ntfs-3g
 - gcc -o seq_rw seq_rw.c
 - gcc -o random_rw random_rw.c
 
-## Running Benchmarks
+## Running fio Benchmarks
 ### On Windows:
 - .\seq_rw.exe
 - .\random_rw.exe
 ### On Ubuntu:
 - ./seq_rw
 - ./random_rw
+
+## Running KDiskMark Benchmarks
+1. Install and run program 
+```bash
+sudo apt update
+sudo apt install kdiskmark
+```
+From terminal launch 
+```bash
+kdiskmark
+```
+2. Configure the Test:
+- Select the partition you want to test (e.g., /mnt/windows for NTFS or /dev/sdaX for ext4).
+- Set test parameters (same as Windows for consistency):
+-   File size: 1 GB or 10 GB.
+-   Test iterations: Default (usually 5).
+-   Block sizes: Include common sizes (e.g., 4 KB, 64 KB, 1 MB).
+3. Start the Test:
+- Click "Start Benchmark" to run the sequential and random read/write tests.
+- Once complete, export or record the results.
+4. Log Results:
+- Use the "Export" option to save the results as a text or image file.
+- Record metrics like Throughput (MB/s) and IOPS for each test.
